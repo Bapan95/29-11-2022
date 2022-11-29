@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title></title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&subset=latin,cyrillic-ext"
+        rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <!-- Bootstrap Core Css -->
+    <link href="assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    <!-- Waves Effect Css -->
+    <link href="assets/plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="assets/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    <!-- Animation Css -->
+    <link href="assets/plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <link href="assets/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap Material Datetime Picker Css -->
+
+
+    <!-- Custom Css -->
+    <link href="js/datepicker.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+
+    <script src="js/nav.js"></script>
+    <script src="js/common-functions.js"></script>
+
+
+</head>
+
+<body class="theme-indigo">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="search-icon"> <i class="fa fa-search"></i> </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search"> <i class="fa fa-closer"></i> </div>
+    </div>
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <div id="top_nav">
+    </div>
+    <!-- #Top Bar -->
+    <!-- User Info -->
+    <script>user();</script>
+    <!-- #User Info -->
+
+
+    <!-- Menu -->
+    <div id="mob_nav_ajax_user"></div>
+    <!-- #Menu -->
+    <!-- Footer -->
+    <script>footer();</script>
+    <section class="content content30">
+        <div class="container-fluid">
+            <!--<div class="block-header">
+                 </div>-->
+            <div class="row clearfix">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <div class="row clearfix">
+                                <div class="col-xs-12 col-sm-6">
+                                    <h2>List Of Booking Details</h2>
+                                </div>
+                                <!-- <div class="col-sm-6" id="list_buttons_div">
+                                    <button style="display: none;"
+                                        class="btn bg-green waves-effect btn-sm action_btn pull-right download_class"
+                                        type="submit" id="download_excel"> <i class="fa fa-download"></i> Download
+                                        Excel</button>
+                                </div> -->
+                                <div class="col-sm-6" id="list_buttons_div" id="download_excel_search_d">
+                                    <button style="display: none;"
+                                        class="btn bg-green waves-effect btn-sm action_btn pull-right download_class"
+                                        type="submit" id="download_excel_search"> <i class="fa fa-download"></i>
+                                        Download
+                                        Excel</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="body">
+                            <div class="row clearfix">
+                                <form id="form1" name="frm_add_edit" class="formEditDataTemplateField" action=""
+                                    autocomplete="off">
+                                    <input type="hidden" id="action_type" name="action_type" value="">
+                                    <!-- <input type="hidden" id="site_id" name="site_id" value=""> -->
+                                    <div class="col-sm-2">
+                                        <div class="form-group form-float">
+                                            <div class="form-line focused-cus">
+                                                <label class="form-label">Select Site Name</label>
+                                                <select class="form-control" id="site_name" name="site_name"
+                                                    data-live-search="true">
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <div class="form-group form-float">
+                                            <button type="submit" id="search_button"
+                                                class="btn btn-primary m_top20 edit_in_menu">Search</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="table-responsive">
+                                <table id="mytable"
+                                    class="table table-bordered table-striped table-hover js-exportable dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Booking No</th>
+                                            <th>Site Code</th>
+                                            <th>Site Name</th>
+                                            <th>Booking From</th>
+                                            <th>Booking To</th>
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="booking_table">
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Core Js -->
+    <script src="assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+
+    <!-- Select Plugin Js -->
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <!-- Moment Plugin Js -->
+    <script src="assets/plugins/momentjs/moment.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="assets/plugins/node-waves/waves.js"></script>
+    <script src="assets/plugins/jquery-validation/jquery.validate.js"></script>
+
+    <!-- Jquery DataTable Plugin Js -->
+    <script src="assets/plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="assets/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <script src="assets/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+    <script src="assets/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+    <script src="assets/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+    <script src="assets/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+    <script src="assets/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+    <script src="assets/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+    <script src="assets/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
+    <!-- Custom Js -->
+    <!-- script src="assets/js/admin.js">
+        </script> -->
+    <script src="assets/js/pages/forms/form-validation.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            getAppName();
+            // isLogin();
+            bind_top_nav();
+            bind_menu_mobile();
+            // user_access();
+            // PopulateBookingList();
+            getsite();
+            $("#download_excel_search").hide();
+
+
+        });
+        function getsite() {
+
+            $.ajax({
+                type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                url: "handler/ajax_booked_site.php",
+                data: { action_type: 'SITE_LIST' },
+                dataType: 'json', // what type of data do we expect back from the server
+                encode: true,
+                async: false
+            })
+                // using the done promise callback
+                .done(function (data) {
+                    //var resultHTML = '<option value="">State</option>';
+                    var resultHTML = '';
+                    if (data.status) {
+                        resultHTML += '<option value="">Select Site Name</option>';
+                        $.each(data.site_list, function (key, value) {
+                            resultHTML += '<option value="' + value.site_id + '">' + value.site_name + '</option>';
+                        });
+                    } else {
+                        resultHTML = '<option value=""">No Records Available</option>';
+                    }
+                    $("#site_name").html(resultHTML);
+                    $('#site_name').selectpicker('refresh');
+
+
+                    console.log(data);
+                })
+                // using the fail promise callback
+                .fail(function (data) {
+                    // show any errors
+                    // best to remove for production
+                    console.log(data);
+                });
+
+        }
+
+        $("#form1").submit(function (event) {
+            event.preventDefault();
+            $('#booking_table').text("");
+            $("#download_excel_search").show();
+
+            $("#action_type").val("SEARCH_BY_DATE");
+            var senData = $("#form1").serializeArray();
+            $.ajax({
+                type: 'POST',
+                url: 'handler/ajax_booked_site.php',
+                data: senData,
+                dataType: 'json',
+                encode: true,
+            })
+                .done(function (data) {
+                    console.log(data);
+                    var resultHTML = ''; var i = 0;
+                    if (data.status) {
+
+                        $.each(data.booking_srch_list, function (key, value) {
+                            i++;
+                            resultHTML += '<tr class="det_emp">';
+                            resultHTML += '<td>' + i + '</td>';
+                            resultHTML += '<td>' + value.booking_no + '</td>';
+                            resultHTML += '<td>' + value.site_code + '</td>';
+                            resultHTML += '<td>' + value.site_name + '</td>';
+                            resultHTML += '<td>' + value.booking_from + '</td>';
+                            resultHTML += '<td>' + value.booking_to + '</td>';
+                            resultHTML += '</tr>';
+                        });
+                    } else {
+                        resultHTML = '<td>No Booking Available</td>';
+                    }
+                    $("#mytable").dataTable().fnDestroy();
+                    $('#booking_table').html(resultHTML);
+                    $('#mytable').DataTable();
+
+
+
+                })
+
+        })
+
+        $("#download_excel_search").click(function (event) {
+
+            event.preventDefault();
+            var site_name = $("#site_name").val();
+            // alert(site_name);
+            $.ajax({
+                type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                url: "handler/ajax_booked_site.php",
+                data: { site_name: site_name, action_type: 'DOWNLOAD_EXCEL_SEARCH_BOOKED' },
+                dataType: 'json', // what type of data do we expect back from the server
+                encode: true
+            })
+                // using the done promise callback
+                .done(function (data) {
+                    console.log(data);
+
+                    if (data.status) {
+
+
+                        //window.location.href = "../available-sites/" + data.file_name;
+                        var $a = $("<a>");
+                        $a.attr("href", data.file);
+                        $a.attr("target", "_blank");
+                        $a.text("Download Excel");
+                        $("#list_buttons_div").append($a);
+                        //var file_name=data.file_name;
+                        $a.attr("download", data.file_name + ".xlsx");
+                        $a[0].click();
+                        $a.remove();
+                    }
+                })
+                // using the fail promise callback
+                .fail(function (data) {
+                    // show any errors
+                    // best to remove for production
+                    console.log(data);
+                });
+        });
+
+    </script>
+</body>
+
+</html>
